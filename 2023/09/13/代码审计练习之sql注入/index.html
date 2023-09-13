@@ -16,17 +16,17 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="(代码审计练习之sql注入)  前言暑假简单的学了一下代码审计，整几个简单的cms来练习  一、sql注入一般审计方法1.数据库监控    通过黑盒功能点测试，查看sql语句，在通过SQL语句关键字进行代码审计2.关键函数审计 通过审计关键函数的代码来审计漏洞  正则表达式 :(update|select|insert|delete|).?where.&#x3D;  静态代码自动审计 二、审计练习">
+    <meta name="description" content="前言暑假简单的学了一下代码审计，整几个简单的cms来练习  一、sql注入一般审计方法1.数据库监控    通过黑盒功能点测试，查看sql语句，在通过SQL语句关键字进行代码审计2.关键函数审计 通过审计关键函数的代码来审计漏洞  正则表达式 :(update|select|insert|delete|).?where.&#x3D;  静态代码自动审计 二、审计练习1.bluecms（无过滤）使">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码审计练习之sql注入">
 <meta property="og:url" content="http://example.com/2023/09/13/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E7%BB%83%E4%B9%A0%E4%B9%8Bsql%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="巴定山猛将军&#39;s blog">
-<meta property="og:description" content="(代码审计练习之sql注入)  前言暑假简单的学了一下代码审计，整几个简单的cms来练习  一、sql注入一般审计方法1.数据库监控    通过黑盒功能点测试，查看sql语句，在通过SQL语句关键字进行代码审计2.关键函数审计 通过审计关键函数的代码来审计漏洞  正则表达式 :(update|select|insert|delete|).?where.&#x3D;  静态代码自动审计 二、审计练习">
+<meta property="og:description" content="前言暑假简单的学了一下代码审计，整几个简单的cms来练习  一、sql注入一般审计方法1.数据库监控    通过黑盒功能点测试，查看sql语句，在通过SQL语句关键字进行代码审计2.关键函数审计 通过审计关键函数的代码来审计漏洞  正则表达式 :(update|select|insert|delete|).?where.&#x3D;  静态代码自动审计 二、审计练习1.bluecms（无过滤）使">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/image.png">
 <meta property="og:image" content="http://example.com/img/image-1.png">
 <meta property="article:published_time" content="2023-09-13T13:52:34.751Z">
-<meta property="article:modified_time" content="2023-09-13T15:10:12.728Z">
+<meta property="article:modified_time" content="2023-09-13T15:12:20.101Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/image.png">
@@ -275,8 +275,7 @@
             
               <div class="markdown-body">
                 
-                <p>(代码审计练习之sql注入)</p>
-<hr>
+                <hr>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>暑假简单的学了一下代码审计，整几个简单的cms来练习</p>
 <hr>
 <h1 id="一、sql注入一般审计方法"><a href="#一、sql注入一般审计方法" class="headerlink" title="一、sql注入一般审计方法"></a>一、sql注入一般审计方法</h1><p>1.数据库监控<br>    通过黑盒功能点测试，查看sql语句，在通过SQL语句关键字进行代码审计<br>2.关键函数审计<br> 通过审计关键函数的代码来审计漏洞<br>  正则表达式 :(update|select|insert|delete|).<em>?where.</em>&#x3D;<br>  静态代码自动审计</p>
